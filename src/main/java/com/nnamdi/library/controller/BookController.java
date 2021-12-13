@@ -2,6 +2,7 @@ package com.nnamdi.library.controller;
 
 import com.nnamdi.library.exceptions.DuplicateException;
 import com.nnamdi.library.model.Book;
+import com.nnamdi.library.model.request.CategoryDto;
 import com.nnamdi.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -43,8 +44,8 @@ public class BookController {
     }
 
     @PutMapping("/category/book/{id}")
-    public ResponseEntity<Book> assignBookCategory(@PathVariable("id") Long id, @RequestBody Book book) throws DuplicateException {
-        Book updateBook = bookService.addBookToCategory(id, book);
+    public ResponseEntity<Book> assignBookCategory(@PathVariable("id") Long id, @RequestBody CategoryDto assignedCategory) throws DuplicateException {
+        Book updateBook = bookService.addBookToCategory(id, assignedCategory.getCategory());
         return new ResponseEntity<>(updateBook, HttpStatus.OK);
     }
 
