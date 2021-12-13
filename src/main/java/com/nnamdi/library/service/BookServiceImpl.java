@@ -70,9 +70,9 @@ public class BookServiceImpl implements BookService
     }
 
     @Override
-    public Book addBookToCategory(Long bookId, Book book) {
-        Set<Category> category =  book.getCategory();
-        Set<Category> assignedCategories = checkIfBookCategoryExists(category);
+    public Book addBookToCategory(Long bookId, Set<Category> categories)  {
+//        Set<Category> category =  book.getCategory();
+        Set<Category> assignedCategories = checkIfBookCategoryExists(categories);
         Book existingBook = findBookById(bookId);
         if (assignedCategories != null) {
             existingBook.setCategory(assignedCategories);

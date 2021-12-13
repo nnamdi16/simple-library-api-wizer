@@ -13,7 +13,7 @@ public interface BookService {
     Book findBookById(Long id) throws NotFoundException;
     List<Book> findAllBooks();
     Book updateBooks(Long id, Book book) throws NotFoundException;
-    Book addBookToCategory(Long bookId, Book book);
+    Book addBookToCategory(Long bookId, Set<Category> categories);
     Set<Category> checkIfBookCategoryExists(Set<Category> bookCategory) throws NotFoundException;
     Book deleteBook(Long bookId);
     List<Book> findFavouriteBooks();
