@@ -15,12 +15,11 @@ This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or 
 * Change mysql username and password as per your installation
     + open `src/main/resources/application.properties`
     + change `spring.datasource.username` and `spring.datasource.password` as per your mysql installation
-* You can build the project and run the tests by running ```gradle clean build```
+* You can build the project and run the tests by running ```./gradlew build```
 * Once successfully built, you can run the service by one of these two methods:
 ```
-        java -jar build/libs/library-0.0.1-SNAPSHOT.jar
+        java -jar build/libs/library-0.0.1-SNAPSHOT.war
 ```
-
 
 Once the application runs you should see something like this
 
@@ -44,47 +43,35 @@ Here are some endpoints you can call:
 
 ```
 POST 'http://localhost:9000/api/v1/book'
-
 ```
 
 ### Get list of books
 
 ```
 GET 'http://localhost:9000/api/v1/books'
-
 ```
 
 ### Edit Book
 
 ```
 PUT 'http://localhost:9000/api/v1/book/{id}'
-
-
-
 ```
 ### Assign Book to a Category
 
 ```
 PUT 'http://localhost:9000/api/v1/category/book/{id}'
-
-
-
 ```
 
 ### Delete Book
 
 ```
 DELETE 'http://localhost:9000/api/v1/book/{id}'
-
-
-
 ```
 
 ### Get favorite books
 
 ```
 GET 'http://localhost:9000/api/v1/favorite/books'
-
 ```
 
 ### Add a category
@@ -533,7 +520,7 @@ Spring Boot is an "opinionated" application bootstrapping framework that makes i
 
 **2. Creating a Swagger Documentation for the endpoints**
 
-**2. Improved error handling and Response messages**
+**2. Improving error handling and Response messages**
 
 
 ### Questions and Comments: nwabuokeinnamdi19@gmail.com
